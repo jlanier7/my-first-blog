@@ -10,11 +10,13 @@
         </header>
 
         <main>
+        {% for post in posts %}
             <article>
-                <time>published: 12.01.2022, 11:03</time>
-                <h2><a href="">First Post</a></h2>
-                <p>Some content....</p>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
             </article>
+        (% endfor %)
          </main>  
     </body>
    
